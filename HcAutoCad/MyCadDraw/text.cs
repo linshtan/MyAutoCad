@@ -19,8 +19,8 @@ namespace MyCadDraw
         [CommandMethod("hello")]
         public void Cadtext()
         {
-            Document doc = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
-            MessageBox.Show("hello");
+            //Document doc = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
+            //MessageBox.Show("hello");
         }
 
     }

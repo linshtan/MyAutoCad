@@ -82,6 +82,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CadCommands.cs" />
+    <Compile Include="Init.cs" />
     <Compile Include="text.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
