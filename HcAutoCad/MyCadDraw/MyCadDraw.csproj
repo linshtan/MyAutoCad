@@ -116,5 +116,11 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="App\ReadMe.txt" />
+    <Content Include="global\ReadMe.txt" />
+    <Content Include="Layer\ReadMe.txt" />
+    <Content Include="Unit\ReadMe.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
