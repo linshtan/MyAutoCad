@@ -60,6 +60,9 @@ namespace MyCadDraw
             MKMenuItem = MKMenuItems.AddMenuItem(MKMenuItems.Count + 1, "玻璃铝格条", "drwg ");
             MKMenuItem.HelpString = "命令：drwg，绘制玻璃上的铝格条";
 
+            
+            
+
             newMenu.InsertInMenuBar(CadApp.Application.MenuBar.Count + 1);
 
             CadApp.EndCommand += CadApp_EndCommand;
