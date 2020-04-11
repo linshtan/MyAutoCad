@@ -64,13 +64,14 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Autodesk.AutoCAD.Interop">
-      <HintPath>D:\Tools\CAD2021\AutoCAD 2021\Autodesk.AutoCAD.Interop.dll</HintPath>
+      <HintPath>..\..\..\..\..\Tools\Inventor2020\DWG TrueView 2020 - English\Autodesk.AutoCAD.Interop.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Autodesk.AutoCAD.Interop.Common">
-      <HintPath>D:\Tools\CAD2021\AutoCAD 2021\Autodesk.AutoCAD.Interop.Common.dll</HintPath>
+      <HintPath>..\..\..\..\..\Tools\Inventor2020\DWG TrueView 2020 - English\Autodesk.AutoCAD.Interop.Common.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -87,8 +88,11 @@
     <Compile Include="App\MyCadApp.cs" />
     <Compile Include="App\MyCadMenu.cs" />
     <Compile Include="App\Ribbon\MyRibbon.cs" />
+    <Compile Include="App\Ribbon\MyRibbonButton.cs" />
+    <Compile Include="App\Ribbon\MyRibbonTab.cs" />
     <Compile Include="App\Ribbon\RibbonCommandHandler.cs" />
     <Compile Include="App\Ribbon\RibbonTools.cs" />
+    <Compile Include="App\Ribbon\ToolTip.cs" />
     <Compile Include="CadCommands.cs" />
     <Compile Include="Init.cs" />
     <Compile Include="text.cs" />

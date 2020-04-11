@@ -47,40 +47,37 @@ namespace MyCadDraw.Unit
         /// </summary>
         public string AppDomainDirectory => AppDomain.CurrentDomain.BaseDirectory;
 
-        //获取启动了应用程序的可执行文件的路径，不包括可执行文件的名称。
-        //Application.StartupPath;
-
+       
         /// <summary>
         /// 获取启动了应用程序的可执行文件的路径，不包括可执行文件的名称
         /// </summary>
-        public string AppStartPath=> Application.StartupPath;
+        public string AppStartPath => Application.StartupPath;
 
-        //获取启动了应用程序的可执行文件的路径，包括可执行文件的名称。
-        //Application.ExecutablePath;
+        /// <summary>
+        /// 获取启动了应用程序的可执行文件的路径，包括可执行文件的名称
+        /// </summary>
+        public string AppExPath => Application.ExecutablePath;
 
-        //获取或设置包含该应用程序的目录的名称。
-        //AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
+        /// <summary>
+        /// 获取或设置包含该应用程序的目录的名称
+        /// </summary>
+        public string AppCurDirectory => AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
 
-        //获取模块的完整路径。
-        //System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName
+        /// <summary>
+        /// 获取模块的完整路径
+        /// </summary>
+        public string ModuleDirectory => System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
 
-        //获取和设置当前目录(该进程从中启动的目录)的完全限定目录。
-        //System.Environment.CurrentDirectory
+        /// <summary>
+        /// 获取和设置当前目录(该进程从中启动的目录)的完全限定目录
+        /// </summary>
+        public string EnvirDirectory => System.Environment.CurrentDirectory;
+               
+        /// <summary>
+        /// 获取程序的基目录
+        /// </summary>
+        public string BaseDirectory => System.AppDomain.CurrentDomain.BaseDirectory;
 
-        //获取应用程序的当前工作目录。
-        //System.IO.Directory.GetCurrentDirectory()
-
-        //获取程序的基目录。
-        //System.AppDomain.CurrentDomain.BaseDirectory
-
-        //获取和设置包括该应用程序的目录的名称。
-        //System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase
-
-        //获取启动了应用程序的可执行文件的路径。
-        //System.Windows.Forms.Application.StartupPath
-
-        //获取启动了应用程序的可执行文件的路径及文件名
-        //System.Windows.Forms.Application.ExecutablePath
 
     }
 }
