@@ -64,11 +64,11 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Autodesk.AutoCAD.Interop">
-      <HintPath>D:\Tools\CAD2021\AutoCAD 2021\Autodesk.AutoCAD.Interop.dll</HintPath>
+      <HintPath>..\..\..\..\..\Tools\Inventor2020\DWG TrueView 2020 - English\Autodesk.AutoCAD.Interop.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Autodesk.AutoCAD.Interop.Common">
-      <HintPath>D:\Tools\CAD2021\AutoCAD 2021\Autodesk.AutoCAD.Interop.Common.dll</HintPath>
+      <HintPath>..\..\..\..\..\Tools\Inventor2020\DWG TrueView 2020 - English\Autodesk.AutoCAD.Interop.Common.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="PresentationCore" />
