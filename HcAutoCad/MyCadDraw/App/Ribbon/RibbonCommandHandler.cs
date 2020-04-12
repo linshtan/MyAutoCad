@@ -10,6 +10,7 @@ namespace MyCadDraw.App.Ribbon
 
         public bool CanExecute(object parameter)
         {
+            CanExecuteChanged(parameter, null);
             return true;
         }
 

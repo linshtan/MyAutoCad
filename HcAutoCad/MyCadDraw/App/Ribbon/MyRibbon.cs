@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace MyCadDraw.App.Ribbon
 {
-    internal class MyRibbon
+    public class MyRibbon
     {
+        ///private readonly RibbonControl RibCon = new RibbonControl();
 
         /// <summary>
         /// 获取cad的Ribbon界面
@@ -21,7 +22,32 @@ namespace MyCadDraw.App.Ribbon
             }
         }
 
-        
+        public MyRibbon()
+        {
+            ///RibCon = GetCadRibbon;
+
+        }
+
+        public static RibbonPanelSource AddPanel(string Title)
+        {
+            MyRibbonTab myRibbonTab = new MyRibbonTab();
+            return myRibbonTab.AddPanel(Title);
+        }
+
+        public static void AddButton(RibbonPanelSource ribbonPanelSource, string Title)
+        {
+            MyRibbonPanelSource myRibbonPanelSource = new MyRibbonPanelSource
+            {
+                RibPanel = ribbonPanelSource
+            };
+            MyRibbonButton addButton = new MyRibbonButton
+            {
+                Text = Title
+            };
+            myRibbonPanelSource.AddButton(addButton);
+        }
+
+
 
 
 

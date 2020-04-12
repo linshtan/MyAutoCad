@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using MyCadDraw.global;
 
 namespace MyCadDraw.App.Ribbon
 {
@@ -94,14 +95,21 @@ namespace MyCadDraw.App.Ribbon
         public RibbonCommandHandler CommandHandler { set => RibButton.CommandHandler = value; }
 
         /// <summary>
+        /// 获取按钮ID
+        /// </summary>
+        public string Id { get => RibButton.Id; }
+
+        /// <summary>
         /// 获取或设置按钮帮助文档
         /// </summary>
         public ToolTip RibbonToolTip
         {
             get
             {
-                ToolTip revalue = new ToolTip();
-                revalue.RibToolTip = (RibbonToolTip)RibButton.ToolTip;
+                ToolTip revalue = new ToolTip
+                {
+                    RibToolTip = (RibbonToolTip)RibButton.ToolTip
+                };
                 return revalue;
             }
             set
@@ -157,28 +165,36 @@ namespace MyCadDraw.App.Ribbon
             Host(this);
         }
 
-        /// <summary>
-        /// 按钮属性更改事件委托
-        /// </summary>
-        /// <param name="sender">选项卡按钮</param>
-        /// <param name="ChangedName">更改的属性名称</param>
-        public delegate void PropertyChangedEventHandler(MyRibbonButton sender, string ChangedName);
+        ///// <summary>
+        ///// 按钮属性更改事件委托
+        ///// </summary>
+        ///// <param name="sender">选项卡按钮</param>
+        ///// <param name="ChangedName">更改的属性名称</param>
+        //public delegate void PropertyChangedEventHandler(MyRibbonButton sender, string ChangedName);
 
-        /// <summary>
-        /// 属性更改时发生
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        ///// <summary>
+        ///// 属性更改时发生
+        ///// </summary>
+        //public event PropertyChangedEventHandler PropertyChanged;
 
-        /// <summary>
-        /// 属性更改时发生
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void RibButton_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
+        ///// <summary>
+        ///// 属性更改时发生
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void RibButton_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        //{
+        //    try
+        //    {
+        //        PropertyChanged(this, e.PropertyName);
+        //    }
+        //    catch (Exception)
+        //    {
 
-            PropertyChanged(this, e.PropertyName);
-        }
+        //        return ;
+        //    }
+           
+        //}
 
         /// <summary>
         /// 鼠标离开事件委托
@@ -221,7 +237,7 @@ namespace MyCadDraw.App.Ribbon
         private void RibButton_MouseEntered(object sender, EventArgs e)
         {
             RibButton.Image = GetImage(ImgHoverFileName);
-            MouseLeft(this);
+            MouseEnter(this);
         }
 
         /// <summary>
@@ -248,12 +264,42 @@ namespace MyCadDraw.App.Ribbon
 
         #region 构造函数
 
+        public MyRibbonButton()
+        {
+            ///设置默认属性
+            ///
+            RibButton = new RibbonButton
+            {
+                Name = RibbonDefault.RibButtonName,
+                Text = RibbonDefault.RibButtonName,
+                IsActive = true,
+                IsEnabled = true,
+                IsVisible = true,
+                ShowImage = true,
+                ShowText = true,
+                ShowToolTipOnDisabled = true,
+                Size = RibbonItemSize.Standard,
+                CommandHandler = new RibbonCommandHandler(),
+                Orientation = Orientation.Vertical,
+                CommandParameter = RibbonDefault.RibButtonOrder + " ",
+
+            };
+
+            ///定义事件
+            ///
+            RibButton.MouseEntered += RibButton_MouseEntered;
+            RibButton.MouseLeft += RibButton_MouseLeft;
+            ///RibButton.PropertyChanged += RibButton_PropertyChanged;
+            RibButton.HostEvent += RibButton_HostEvent;
+            RibButton.Initialized += RibButton_Initialized;
+        }
+
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <param name="Name">选项卡按钮名字</param>
         /// <param name="Order">按钮命令</param>
-        public MyRibbonButton(string Name = "MyRibbonButton", string Order = "MyButton")
+        public MyRibbonButton(string Name, string Order = RibbonDefault.RibButtonOrder)
         {
             ///设置默认属性
             ///
@@ -278,7 +324,7 @@ namespace MyCadDraw.App.Ribbon
             ///
             RibButton.MouseEntered += RibButton_MouseEntered;
             RibButton.MouseLeft += RibButton_MouseLeft;
-            RibButton.PropertyChanged += RibButton_PropertyChanged;
+            ///RibButton.PropertyChanged += RibButton_PropertyChanged;
             RibButton.HostEvent += RibButton_HostEvent;
             RibButton.Initialized += RibButton_Initialized;
         }
@@ -289,7 +335,7 @@ namespace MyCadDraw.App.Ribbon
         /// <param name="toolTip">帮助文档</param>
         /// <param name="Name">选项卡按钮名字</param>
         /// <param name="Order">按钮命令</param>
-        public MyRibbonButton(ToolTip toolTip, string Name = "MyRibbonButton", string Order = "MyButton")
+        public MyRibbonButton(ToolTip toolTip, string Name, string Order = global.RibbonDefault.RibButtonOrder)
         {
             ///设置默认属性
             ///
@@ -314,7 +360,7 @@ namespace MyCadDraw.App.Ribbon
             ///
             RibButton.MouseEntered += RibButton_MouseEntered;
             RibButton.MouseLeft += RibButton_MouseLeft;
-            RibButton.PropertyChanged += RibButton_PropertyChanged;
+            ///RibButton.PropertyChanged += RibButton_PropertyChanged;
             RibButton.HostEvent += RibButton_HostEvent;
             RibButton.Initialized += RibButton_Initialized;
         }

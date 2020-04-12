@@ -1,4 +1,5 @@
 ﻿using Autodesk.Windows;
+using MyCadDraw.global;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +42,7 @@ namespace MyCadDraw.App.Ribbon
         /// <param name="content">文档内容</param>
         /// <param name="command">命令说明</param>
         /// <param name="expandedcontent">文档内容说明</param>
-        public ToolTip(string title="MyToolTip", string content="这是默认设置", string command="mytooltip", string expandedcontent= "这是默认设置，请按实际填写")
+        public ToolTip(string title, string content, string expandedcontent, string command = RibbonDefault.RibButtonOrder)
         {
             RibToolTip = new RibbonToolTip
             {
@@ -52,7 +53,35 @@ namespace MyCadDraw.App.Ribbon
             };
         }
 
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="title">标题</param>
+        /// <param name="command">命令说明</param>
+        public ToolTip(string title, string command = RibbonDefault.RibButtonOrder)
+        {
+            RibToolTip = new RibbonToolTip
+            {
+                Title = title,
+                Content = RibbonDefault.RibToolTipContent,
+                Command = command,
+                ExpandedContent = RibbonDefault.RibToolTipExpandedContent
+            };
+        }
 
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        public ToolTip()
+        {
+            RibToolTip = new RibbonToolTip
+            {
+                Title = RibbonDefault.RibToolTipTitle,
+                Content = RibbonDefault.RibToolTipContent,
+                Command = RibbonDefault.RibButtonOrder,
+                ExpandedContent = RibbonDefault.RibToolTipExpandedContent
+            };
+        }
 
 
     }

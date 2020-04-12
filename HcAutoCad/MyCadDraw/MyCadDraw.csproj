@@ -64,11 +64,11 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Autodesk.AutoCAD.Interop">
-      <HintPath>..\..\..\..\..\Tools\Inventor2020\DWG TrueView 2020 - English\Autodesk.AutoCAD.Interop.dll</HintPath>
+      <HintPath>D:\Tools\CAD2021\AutoCAD 2021\Autodesk.AutoCAD.Interop.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Autodesk.AutoCAD.Interop.Common">
-      <HintPath>..\..\..\..\..\Tools\Inventor2020\DWG TrueView 2020 - English\Autodesk.AutoCAD.Interop.Common.dll</HintPath>
+      <HintPath>D:\Tools\CAD2021\AutoCAD 2021\Autodesk.AutoCAD.Interop.Common.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="PresentationCore" />
@@ -89,12 +89,19 @@
     <Compile Include="App\MyCadMenu.cs" />
     <Compile Include="App\Ribbon\MyRibbon.cs" />
     <Compile Include="App\Ribbon\MyRibbonButton.cs" />
+    <Compile Include="App\Ribbon\MyRibbonPanelSource.cs" />
     <Compile Include="App\Ribbon\MyRibbonTab.cs" />
     <Compile Include="App\Ribbon\RibbonCommandHandler.cs" />
     <Compile Include="App\Ribbon\RibbonTools.cs" />
     <Compile Include="App\Ribbon\ToolTip.cs" />
     <Compile Include="CadCommands.cs" />
+    <Compile Include="global\RibbonDefault.cs" />
     <Compile Include="Init.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="text.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Unit\MyPath.cs" />
@@ -133,6 +140,15 @@
     <Content Include="global\ReadMe.txt" />
     <Content Include="Layer\ReadMe.txt" />
     <Content Include="Unit\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="global\Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
